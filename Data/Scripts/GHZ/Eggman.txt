@@ -491,8 +491,7 @@ event ObjectUpdate
 			end if
 
 			switch object.state
-			default
-				
+			default				
 			case GHZEGGMAN_INITIALSWING
 			case GHZEGGMAN_MOVERIGHT
 			case GHZEGGMAN_MOVELEFT
@@ -538,6 +537,13 @@ event ObjectUpdate
 						end if
 					end if
 				end if
+				break
+			case GHZEGGMAN_EXPLODE
+			case GHZEGGMAN_DEFEATFALL
+			case GHZEGGMAN_DEFEATRISE
+			case GHZEGGMAN_FLEE
+			case GHZEGGMAN_ESCAPE
+				break
 			end switch
 
 			// Arena Boundaries
