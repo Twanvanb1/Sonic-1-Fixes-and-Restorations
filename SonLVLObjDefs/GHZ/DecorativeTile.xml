@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ObjDef xmlns="http://www.sonicretro.org" Image="1">
+  <Images>
+    <ImageFromSheet id="1" sheet="GHZ/Objects2.gif" sourcex="1" sourcey="175" width="16" height="16">
+      <Offset X="-8" Y="-8"/>
+    </ImageFromSheet>
+    <ImageFromSheet id="2" sheet="GHZ/Objects2.gif" sourcex="18" sourcey="175" width="16" height="16">
+      <Offset X="-8" Y="-8"/>
+    </ImageFromSheet>
+	<ImageFromSheet id="3" sheet="GHZ/Objects2.gif" sourcex="35" sourcey="175" width="16" height="16">
+      <Offset X="-8" Y="-8"/>
+    </ImageFromSheet>
+  </Images>
+  <Properties>
+    <Property name="End" description="Which end of the Bridge this Post is on." type="dirs" startbit="0" length="1" />
+  </Properties>
+  <Enums>
+    <Enum name="dirs">
+      <EnumMember name="1" />
+      <EnumMember name="2" />
+      <EnumMember name="3" />
+    </Enum>
+  </Enums>
+  <Subtypes>
+    <Subtype id="00" name="1" image="1" />
+    <Subtype id="01" name="2" image="2" />
+    <Subtype id="02" name="3" image="3" />
+  </Subtypes>
+</ObjDef>

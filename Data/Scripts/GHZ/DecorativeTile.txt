@@ -1,0 +1,50 @@
+// ----------------------------------
+// RSDK Project: Sonic-The-Hedgehog-Restored
+// Script Description: Decorative Tile
+// Script Author: Twanvanb1
+// ----------------------------------
+
+// ========================
+// Aliases
+// ========================
+
+private alias 0 : INDOOR_SLOPED_EDGE
+private alias 1 : SAND_CORK_HOLDER
+
+
+event ObjectUpdate
+	object.priority = PRIORITY_ACTIVE
+end event
+
+
+event ObjectDraw
+	DrawSpriteFX(object.propertyValue, FX_FLIP, object.xpos, object.ypos)
+end event
+
+
+event ObjectStartup
+    
+	foreach (TypeName[Decorative Tile], arrayPos0, ALL_ENTITIES)
+		object[arrayPos0].drawOrder     = 5
+
+        object[arrayPos0].priority = PRIORITY_BOUNDS
+    next
+
+	LoadSpriteSheet("GHZ/Objects2.gif")
+	SpriteFrame(-8, -8, 16, 16, 1, 175)
+	SpriteFrame(-8, -8, 16, 16, 18, 175)
+	SpriteFrame(-8, -8, 16, 16, 35, 175)
+	
+	
+
+end event
+
+event RSDKDraw
+	DrawSpriteFX(object.propertyValue, FX_FLIP, object.xpos, object.ypos)
+end event
+
+event RSDKLoad
+	LoadSpriteSheet("SPZ/Objects.gif")
+	SpriteFrame(-16, -8, 32, 16, 189, 184)
+	SpriteFrame(-16, -8, 32, 16, 189, 184)
+end event
