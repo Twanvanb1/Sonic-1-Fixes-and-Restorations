@@ -10,7 +10,7 @@
 // ========================
 
 private alias object.value0 : object.palRotateTimer
-private alias object.value1 : object.PaletteRow
+private alias object.value1 : object.paletteRow
 private alias object.value2 : object.rLightTimer
 
 // Tracks
@@ -494,17 +494,17 @@ event ObjectUpdate
 	if object.palRotateTimer == 6
 		object.palRotateTimer = 0
 		
-		object.PaletteRow++
-		object.PaletteRow &= 3
+		object.paletteRow++
+		object.paletteRow &= 3
 		rotatePalette(0, 183, 186, false)
 		
-		GetTableValue(temp2, object.PaletteRow, SYSSetup_RedPalCycle)
+		GetTableValue(temp2, object.paletteRow, SYSSetup_RedPalCycle)
 		SetPaletteEntry(0, 187, temp2)
 		
-		GetTableValue(temp2, object.PaletteRow, SYSSetup_WhitePalCycle)
+		GetTableValue(temp2, object.paletteRow, SYSSetup_WhitePalCycle)
 		SetPaletteEntry(0, 189, temp2)
 	end if
-
+	
 	object.rLightTimer++
 	object.rLightTimer %= 48
 	SYZSetup_RLightFrame = object.rLightTimer
@@ -522,18 +522,6 @@ event ObjectStartup
 	// Also set the speed up/slow down functions
 	SpeedUpMusic = SYZSetup_SpeedUpMusic
 	SlowDownMusic = SYZSetup_SlowDownMusic
-
-	// Load colors used for the palette cycle
-	// While the majority of this game uses tables for color data, SYZ instead goes back to the v3 approach of loading colors from an external file into alternate palette banks
-	temp0 = 1  // Palette bank
-	temp1 = 0  // Start Index
-	temp2 = 32 // End Index
-	//while temp0 < 5
-		//LoadPalette("SYZ_PalCycle.act", temp0, 160, temp1, temp2)
-		//temp0++
-		//temp1 += 32
-		//temp2 += 32
-	//loop
 
 	// Set the animal types
 	animalType1 = TypeName[Cucky]
